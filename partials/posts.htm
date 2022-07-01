@@ -1,0 +1,56 @@
+[viewBag]
+==
+{% set posts = blogPosts.posts %}
+<div id="page-content" class="spacer p-top-xl">
+    <div class="wrapper">
+        <div class="content">
+            <div id="blog">
+                <div class="row gutter-width-md">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                        <div class="row gutter-width-md with-pb-lg">
+                            {% for post in posts %}
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="card card-post">
+                                    <div class="card-top position-relative">
+                                        <a href="{{ post.url }}">
+                                            <div class="img object-fit overflow-hidden">
+                                                <div class="object-fit-cover transform-scale-h">
+                                                    {% if post.featured_images.count > 0 %}
+                                                        <img class="card-top-img" src="{{ post.featured_images.first.getThumb(500, 'auto') }}" alt="{{ post.title }} - post image">
+                                                    {% else %}
+                                                        <img class="card-top-img" src="https://via.placeholder.com/500x500.webp" alt="{{ post.title }} - post image">
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            {% if post.title %}
+                                                <a title="{{ post.title }}" href="{{ post.url }}">{{ post.title }}</a>
+                                            {% else %}
+                                                <a title="{{ post.title }}" href="{{ post.url }}">{{ post.excerpt }}</a>
+                                            {% endif %}
+                                        </div>
+
+                                        <p class="card-text">{{ post.excerpt }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <div class="no-posts">
+                                    <p>{{ noPostsMessage }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    {% partial 'aside' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- #page-content -->

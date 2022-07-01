@@ -1,0 +1,51 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "Post not found"
+sortOrder = "random"
+categoryPage = "blog"
+postPage = "post"
+
+[viewBag]
+==
+{% set posts = blogPosts.posts %}
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <aside id="aside" class="widget-area">
+
+        <li class="widget widget_recent_entries">
+            <h5 class="widget-title">Recent posts</h5>
+
+            <ul class="list-unstyled items">
+                {% for post in posts %}
+                <li class="item">
+                    <div class="row gutter-width-xs">
+                        <div class="col-3">
+                            <a href="{{ post.url }}">
+                                <div class="img object-fit overflow-hidden">
+                                    <div class="object-fit-cover transform-scale-h">
+                                        {% if post.featured_images.count > 0 %}
+                                            <img src="{{ post.featured_images.first.getThumb(92, 'auto') }}" alt="{{ post.title }} - image recent post">
+                                        {% else %}
+                                            <img src="https://via.placeholder.com/92x92.webp" alt="{{ post.title }} - image recent post">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-9 align-self-center">
+                            <p class="item-t-head"><a href="{{ post.url }}">{{ post.title }}</a></p>
+                        </div>
+                    </div>
+                </li>
+                {% else %}
+                <li class="item">
+                    <div class="no-posts">
+                        <p>{{ noPostsMessage }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+</div>

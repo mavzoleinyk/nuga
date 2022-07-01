@@ -1,0 +1,57 @@
+[viewBag]
+
+[staticMenu]
+code = "main-menu"
+==
+<div id="modals">
+    <div class="modal fade" id="menu-modal" tabindex="-1" role="dialog" aria-labelledby="menu-modal" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+            <div class="wrapper">
+                <div class="modal-content">
+                    <div class="modal-header modal-header-top">
+                        <div class="header-content d-flex justify-content-between w-100">
+                            <div class="header-left align-self-center">
+                                <div class="header-logo">
+                                    <a class="logo logo-secondary transform-scale-h" title="Logo" href="/">
+                                        <img src="{{ 'assets/vendor/img/logo/logo.png'|theme }}" alt="Logo">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-right d-flex justify-content-end">
+                                <div class="d-flex align-items-center">
+                                    <div class="menu-close-toggle">
+                                        <button type="button" class="close btn btn-lg btn-link border-0 p-0 min-w-auto" data-dismiss="modal" aria-label="Close"><i class="forch-icon-close"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-body modal-body-centered">
+
+                        <div class="animated fadeinright d-flex justify-content-end w-100">
+                            <nav class="menu-primary">
+                            {% if staticMenu.menuItems %}
+                                <ul class="nav">
+                                    {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+                                </ul>
+                            {% endif %}
+                            </nav>
+                        </div>
+                    </div>                       
+                    <div class="modal-footer">
+                        <nav class="menu-secondary">
+                            <div class="social">
+                                <div class="social-item"><a href="https://www.facebook.com/nugabestpl"><img src="{{ 'assets/vendor/img/icon/facebook_icon.svg'|theme}}" alt=""></a></div>
+                                <div class="social-item"><a href="https://www.instagram.com/nugapl/"><img src="{{ 'assets/vendor/img/icon/instagram_icon.svg'|theme}}" alt=""></a></div>
+                                <div class="social-item"><a href="https://www.pinterest.com/nugabestpl/"><img src="{{ 'assets/vendor/img/icon/pinterest-logo-icon.png'|theme}}" alt=""></a></div>
+                                <div class="social-item"><a href="https://www.tiktok.com/@nugabestpl"><img src="{{ 'assets/vendor/img/icon/tik-tok-icon.png'|theme}}" alt=""></a></div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- #menu-modal -->
+</div><!-- #modals -->

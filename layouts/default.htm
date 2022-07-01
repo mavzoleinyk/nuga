@@ -1,0 +1,76 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>NUGA.PL</title>
+
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.ico" sizes="16x16">
+
+    <link rel="stylesheet" href="{{ 'assets/vendor/css/style.css'|theme}}">
+    <link rel="stylesheet" href="{{ 'assets/vendor/css/custom.css'|theme}}">
+</head>
+<body class="home bg-fixed bg-stripes">
+{% partial 'loader' %}
+
+{% partial 'header' %}
+
+{% if this.page.url=='/' %}
+    <section class="info">
+        <div class="info__block">
+            <div class="info__logo">
+                <img src="{{ 'assets/vendor/img/logo/logo-big.png'|theme }}" alt="">
+            </div>
+            <div class="info__description">
+                Zapraszamy do skorzystania z nowoczesnych technologii zdrowia!
+            </div>
+            <div class="info__btn">
+                <a href="/salony" class="btn-primary">ZNAJDŹ SALON</a>
+            </div>
+        </div>
+        <div class="info__images">
+            <div class="info__img info__img_big" style="background-image: url({{ 'assets/vendor/img/info/info-img-1.png'|theme }});">
+                <div class="info__images-title">
+                    Aktywność
+                </div>
+            </div>
+            <div class="info__images-block">
+                <div class="info__img info__img_small" style="background-image: url({{ 'assets/vendor/img/info/info-img-2.png'|theme }});">
+                    <div class="info__images-title">
+                        Sprawność
+                    </div>
+                </div>
+                <div class="info__img info__img_small" style="background-image: url({{ 'assets/vendor/img/info/info-img-3.png'|theme }});">
+                    <div class="info__images-title">
+                        Życie bez bólu
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+<main id="main" class="site-main">
+
+    {% page %}
+
+</main><!-- .site-main -->
+
+{% partial 'footer' %}
+
+{% partial 'modals' %}
+<!-- JS -->
+<script src="{{ 'assets/vendor/js/main.min.js'|theme}}"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.ico" sizes="16x16">
+
+    <link rel="stylesheet" href="{{ 'assets/vendor/css/style.css'|theme}}">
+    <link rel="stylesheet" href="{{ 'assets/vendor/css/custom.css'|theme}}">
+</head>
+<body class="home bg-fixed bg-stripes">
+{% partial 'loader' %}
+
+{% partial 'header' %}
+
+<main id="main" class="site-main">
+
+    {% page %}
+
+</main><!-- .site-main -->
+
+{% partial 'footer' %}
+
+{% partial 'modals' %}
+<!-- JS -->
+<script src="{{ 'assets/vendor/js/main.min.js'|theme}}"></script>
+</body>
+</html>

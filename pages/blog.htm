@@ -1,0 +1,24 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "blog-layout"
+description = "Раздел блог все записи"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 30
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+==
+<div id="page-title">
+    <div class="wrapper">
+        <div class="title">
+            <h1 class="large">{{ this.page.title }}</h1>
+        </div>
+    </div>
+</div><!-- #page-title -->
+{% partial 'posts' %}

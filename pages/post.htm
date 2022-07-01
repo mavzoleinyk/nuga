@@ -1,0 +1,55 @@
+title = "Blog post"
+url = "/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[SeoBlogPost]
+post = "post"
+==
+{% component 'SeoBlogPost' data=post %}
+<div id="page-title">
+    <div class="wrapper">
+        <div class="title">
+            <h1 class="large">{{post.title }}</h1>
+        </div>
+    </div>
+</div><!-- #page-title -->
+<div id="page-content" class="spacer p-top-xl">
+    <div class="wrapper">
+        <div class="content">
+            <div id="single">
+                <div class="row gutter-width-md">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 single-content">
+                        <div class="img">
+                            <div class="object-img-cover">
+                                {% if post.featured_images.count %}
+                                    {% for image in post.featured_images %}
+                                        <img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }} - post image" style="max-width: 100%">
+                                    {% endfor %}
+                                {% else %}
+                                    <img src="https://via.placeholder.com/1050x550.webp" alt="{{ post.title }} - post image" style="max-width: 100%">
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="title">
+                            <h2>{{ post.excerpt }}</h2>
+                        </div>
+
+                        <div class="description clearfix">
+                            {{ post.content_html|raw }}
+                        </div>
+                    </div>
+
+                    {% partial 'aside' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- #page-content -->

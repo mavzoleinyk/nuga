@@ -1,0 +1,67 @@
+items:
+    -
+        title: 'Mój Nuga Best'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: home
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Katalog urządzeń Nuga Best'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: services
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Salony Nuga Best Polska'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: projects
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Historia Nuga Best'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: about
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Blog Nuga Best'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: blog
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Main menu'
