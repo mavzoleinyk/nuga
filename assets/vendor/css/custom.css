@@ -89,6 +89,7 @@
 .description-row ul li{
     margin-bottom: 0;
     flex: 1 0;
+    font-size: 15px;
 }
 
 .description-row ul li a{
