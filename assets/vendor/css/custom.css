@@ -104,8 +104,22 @@
     display: none;
 }
 
+.projects-items .projects-item .projects-item-content .projects-item-content-sec .projects-item-description .projects-item-title{
+    font-size: 25px;
+}
+
 .site-footer .logo img{
     width: 17rem;
+}
+
+.page-404{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-content-404{
+    text-align: center;
 }
 
 .footer .footer-menu .nav{

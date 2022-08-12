@@ -1,0 +1,71 @@
+description = "Static page FLAT"
+
+[staticPage]
+useContent = 1
+default = 0
+
+[SeoStaticPage]
+==
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    {% component 'SeoStaticPage' %}
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.ico" sizes="16x16">
+
+    <link rel="stylesheet" href="{{ 'assets/vendor/css/style.css'|theme}}">
+    <link rel="stylesheet" href="{{ 'assets/vendor/css/custom.css'|theme}}">
+</head>
+<body class="home bg-fixed bg-stripes">
+{% partial 'loader' %}
+
+{% partial 'header' %}
+
+<main id="main" class="site-main">
+    <div id="page-title">
+        <div class="wrapper">
+            <div class="title">
+                <h1 class="large">{{ this.page.title }}</h1>
+            </div>
+        </div>
+    </div><!-- #page-title -->
+
+    <div id="page-content" class="spacer p-top-xl">
+        <div class="content">
+            <section id="about-the-project" class="block spacer p-top-xl">
+                <div class="wrapper">
+                    <div class="title">
+                        <h2>{{ post.excerpt }}</h2>
+                    </div>
+
+                    <div class="row gutter-width-md with-pb-md">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="description">
+                                {% page %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- #about-the-project -->
+        </div>
+    </div><!-- #page-content -->
+
+</main><!-- .site-main -->
+
+{% partial 'footer' %}
+
+{% partial 'modals' %}
+<!-- JS -->
+<script src="{{ 'assets/vendor/js/main.min.js'|theme}}"></script>
+</body>
+</html>

@@ -25690,7 +25690,7 @@ body:not(.elementor-page) #page-content .content img {
 
 .projects-items .projects-item .projects-item-content .projects-item-content-sec {
     position: absolute;
-    top: 50%;
+    top: 75%;
     opacity: 1;
     -webkit-transform: translateY(0%);
     -ms-transform: translateY(0%);
